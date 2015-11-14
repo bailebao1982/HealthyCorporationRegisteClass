@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<Commands>
+    <Command name = 'Weixin'>
+        <CommandItem>
+            <id>1</id>
+            <Name>测试命令1</Name>
+            <Sequence>1</Sequence>
+            <Carriage>Carriage1</Carriage>
+        </CommandItem>
+        <CommandItem> 
+            <id>2</id>
+            <Name>测试命令2</Name>
+            <Sequence>2</Sequence>
+            <Carriage>Carriage2</Carriage>
+        </CommandItem>
+        <CommandItem>
+            <id>3</id>
+            <Name>测试命令3</Name>
+            <Sequence>3</Sequence>
+            <Carriage>Carriage3</Carriage>
+        </CommandItem>
+        <CommandItem>
+            <id>4</id>
+            <Name>测试命令11</Name>
+            <Sequence>4</Sequence>
+            <Carriage>Carriage4</Carriage>
+            <ParentCommandItem>1</ParentCommandItem>
+        </CommandItem>
+        <CommandItem>
+            <id>5</id>
+            <Name>测试命令12</Name>
+            <Sequence>5</Sequence>
+            <Carriage>Carriage5</Carriage>
+            <ParentCommandItem>1</ParentCommandItem>
+        </CommandItem>
+    </Command>
+</Commands>

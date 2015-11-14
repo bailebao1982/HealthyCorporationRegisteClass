@@ -1,0 +1,228 @@
+2015-10-31 17:50:57.271:INFO::jetty-6.1.26
+2015-10-31 17:50:57.340:INFO::Deploy /root/jetty-6.1.26/contexts/test.xml -> org.mortbay.jetty.webapp.WebAppContext@133adc{/,/root/jetty-6.1.26/webapps/test}
+2015-10-31 17:50:57.376:INFO::Deploy /root/jetty-6.1.26/contexts/test-jndi.xml -> org.mortbay.jetty.webapp.WebAppContext@1b7dea0{/test-jndi,/root/jetty-6.1.26/contexts/test-jndi.d}
+2015-10-31 17:50:57.409:INFO::Deploy /root/jetty-6.1.26/contexts/javadoc.xml -> org.mortbay.jetty.handler.ContextHandler@6a3f77{/javadoc,file:/root/jetty-6.1.26/javadoc/}
+2015-10-31 17:50:57.825:INFO:/:Transparent AsyncProxyServlet @ /google to http://www.google.com
+2015-10-31 17:50:57.876:INFO::No Transaction manager found - if your webapp requires one, please configure one.
+2015-10-31 17:50:57.987:WARN::Unknown realm: Test JAAS Realm
+2015-10-31 17:50:58.057:INFO::Extract file:/root/jetty-6.1.26/webapps/TestWeb.war to /tmp/Jetty_0_0_0_0_8080_TestWeb.war__TestWeb__.2dby2h/webapp
+2015-10-31 17:50:58.441:INFO:/TestWeb:Initializing Spring root WebApplicationContext
+Oct 31, 2015 5:50:58 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization started
+Oct 31, 2015 5:50:58 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing Root WebApplicationContext: startup date [Sat Oct 31 17:50:58 CST 2015]; root of context hierarchy
+Oct 31, 2015 5:50:58 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from file [/tmp/Jetty_0_0_0_0_8080_TestWeb.war__TestWeb__.2dby2h/webapp/WEB-INF/classes/com/wx/config/spring-common.xml]
+Oct 31, 2015 5:50:58 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFO: Loaded JDBC driver: com.mysql.jdbc.Driver
+Oct 31, 2015 5:50:59 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+Oct 31, 2015 5:50:59 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.7.Final}
+Oct 31, 2015 5:50:59 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+Oct 31, 2015 5:50:59 PM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+Oct 31, 2015 5:50:59 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Oct 31, 2015 5:50:59 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+Oct 31, 2015 5:50:59 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Oct 31, 2015 5:50:59 PM org.hibernate.id.UUIDHexGenerator <init>
+WARN: HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Coacher
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [name, id]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Customer
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [name, id, coacherid, type]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_RegisterClass
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [deleteflag, signature, id, place, coacher, customer, classtime]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_SaleRecord
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [id, classnum, coacher, customer]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Sign
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [feedback, customerid, id, coacherid, classtime]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_TrainingClass
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [schedule, trainingplan, coacher_id, id, customer_id, classtime]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:00 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+Oct 31, 2015 5:51:00 PM org.springframework.orm.hibernate4.HibernateTransactionManager afterPropertiesSet
+INFO: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@49dadf] of Hibernate SessionFactory for HibernateTransactionManager
+Oct 31, 2015 5:51:00 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization completed in 1982 ms
+2015-10-31 17:51:00.458:INFO::Extract file:/root/jetty-6.1.26/webapps/cometd.war to /tmp/Jetty_0_0_0_0_8080_cometd.war__cometd__.t2qfkl/webapp
+2015-10-31 17:51:01.185:INFO::Opened /root/jetty-6.1.26/logs/2015_10_31.request.log
+2015-10-31 17:51:01.193:INFO::Started SelectChannelConnector@0.0.0.0:8080
+Oct 31, 2015 5:51:16 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@cde7e: startup date [Sat Oct 31 17:51:16 CST 2015]; root of context hierarchy
+Oct 31, 2015 5:51:16 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFO: Loading XML bean definitions from class path resource [com/wx/config/spring-common.xml]
+Oct 31, 2015 5:51:16 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFO: Loaded JDBC driver: com.mysql.jdbc.Driver
+Oct 31, 2015 5:51:16 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+Oct 31, 2015 5:51:16 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+Oct 31, 2015 5:51:16 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000228: Running hbm2ddl schema update
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000102: Fetching database metadata
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000396: Updating schema
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Coacher
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [name, id]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Customer
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [name, id, coacherid, type]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_RegisterClass
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [deleteflag, signature, id, place, coacher, customer, classtime]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_SaleRecord
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [id, classnum, coacher, customer]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_Sign
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [feedback, customerid, id, coacherid, classtime]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000261: Table found: HealthyCorporation.T_TrainingClass
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000037: Columns: [schedule, trainingplan, coacher_id, id, customer_id, classtime]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000108: Foreign keys: []
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.TableMetadata <init>
+INFO: HHH000126: Indexes: [primary]
+Oct 31, 2015 5:51:16 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
+INFO: HHH000232: Schema update complete
+Oct 31, 2015 5:51:16 PM org.springframework.orm.hibernate4.HibernateTransactionManager afterPropertiesSet
+INFO: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@19396bf] of Hibernate SessionFactory for HibernateTransactionManager
+context is not null
+ClassService is not null;
+<xml><ToUserName><![CDATA[wxe706b25abb1216c0]]></ToUserName>
+<Encrypt><![CDATA[dob65Yy/RVBpm1KkAM9/gun1eoOmlAN87/Qj+c398OJUOsJ7giKCvU9n32tYHsEDpXEtpYT/i+2IDixFcAITyQshSptCqOVLFpskGWZsVMGUdy1zoO0gT+YVSkLK4A3+RWdHY2hJ042sVSaH1B/X/+wCR3E1/p9Ugm425W0NhgccfDnA+smqeDMv0TR/wuFL2wa91r96M3bdNvDHyM+n2ZJCbEOaiWnWj52yr+tLq7gN3JG2yHfEUCRTS7iB55GLN1nz/kbz6GCY2e++9yD1aclTe6Ew9kB5dPGrZT+DOmjNaMiJJX9Tw38EMh52JRziSyb5gNGXd1JEkh1sXNJo1Cmb976BovlZzXi31K/GUPgZnuWE3K0kQjE2fJN59aRS8yQAKHsy3YHyu/wsAfCgC5ye1SQGAN2cpO8rSlxh/0U=]]></Encrypt>
+<AgentID><![CDATA[2]]></AgentID>
+</xml>
+msg=<xml><ToUserName><![CDATA[wxe706b25abb1216c0]]></ToUserName>
+<FromUserName><![CDATA[wei.z.zhu]]></FromUserName>
+<CreateTime>1446285075</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<AgentID>2</AgentID>
+<Event><![CDATA[click]]></Event>
+<EventKey><![CDATA[14]]></EventKey>
+</xml>
+Event==click
+EventKey=14
+getUserInfoFromUserID.userIdwei.z.zhu
+GetToken firstTime while accessToken is null.
+accessToken:uYyVAT9j_wmnS91EjWpmZY8Gp_-WhxGrQ8gW0cLlbvyZ88DKH7q4722XOK24EhIeOcQUT0ALGbCNmpOUE17ltg
+getUserInfoFromUserID.queryUserURLhttps://qyapi.weixin.qq.com/cgi-bin/user/get?access_token=uYyVAT9j_wmnS91EjWpmZY8Gp_-WhxGrQ8gW0cLlbvyZ88DKH7q4722XOK24EhIeOcQUT0ALGbCNmpOUE17ltg&userid=wei.z.zhu
+Oct 31, 2015 5:51:17 PM net.sf.json.JSONObject toBean
+WARNING: Tried to assign property gender:java.lang.String to bean of class com.wx.bo.UserInfo
+Oct 31, 2015 5:51:18 PM com.wx.util.WXUtils send
+INFO: {"type":"image","media_id":"1Lc0nGB4tgnlDmDH-YU4KnWrWvNiXm5sRg8iHoXq070AtKmznx2NCk-8gOQY6-4T3L6kDS76U7PgmX-XC09OJBA","created_at":1446285078}
+Upload error message:null error code:null
+Oct 31, 2015 5:51:18 PM net.sf.json.JSONObject defaultBeanProcessing
+INFO: Property 'imageMedia' of class com.wx.corpsend.message.ImageSendMessage has no read method. SKIPPED
+JsonObject:{"agentid":2,"image":{"media_id":"1Lc0nGB4tgnlDmDH-YU4KnWrWvNiXm5sRg8iHoXq070AtKmznx2NCk-8gOQY6-4T3L6kDS76U7PgmX-XC09OJBA"},"msgtype":"image","toparty":"","totag":0,"touser":"wei.z.zhu"}
+{"errcode":0,"errmsg":"ok","invalidtag":"all tag invalid"}
+Oct 31, 2015 5:51:18 PM net.sf.json.JSONObject defaultBeanProcessing
+INFO: Property 'textContent' of class com.wx.corpsend.message.TextSendMessage has no read method. SKIPPED
+JsonObject:{"agentid":2,"msgtype":"text","text":{"content":"如果要删除签课记录，同一签课表扫描两次."},"toparty":"","totag":0,"touser":"wei.z.zhu"}
+{"errcode":0,"errmsg":"ok","invalidtag":"all tag invalid"}
+<xml><ToUserName><![CDATA[wxe706b25abb1216c0]]></ToUserName>
+<Encrypt><![CDATA[Nq6/LZe+u+lGEGRoQppbG7gCl0KBG5eIoye6WETC3T4HozB5P9xgJlvg5N+pifr7QZ5Lsq8/9WbbVt85u9adTbC8vvzERurig/+5eqeylnHqY7U82iCwa5TrlzZ8mKbMiYePrkMO9zDp1jdJcHXhKbY/0MXVKtrzcHRHTVLeIcF0sZ37OQvGFNBiZsHQ77uOxsSrEjLitfHU200epGOCKYSELikqhXh0C+gXxCQiyYepvJ1DXR7LoQXspb5aZl3JHB82GG92u6r74MT2sQl6McIouzpy8YbK+t+iJVFgtXJiMCoYsONq87OTTpkkX3/3oMXf0xWqWUlWBdtcB5aSG/UumRwJGguAKRXuVqI5wgaxzT1DyFNh6QZz6aNlKfa7mj55SqQnzgvvc6+LO8D55BLIRK21JWz5iuffTb0eY6DhK6zxt52LanZ9+BGEuDpA9FONe6mNXnQ3s4ya7saeoA==]]></Encrypt>
+<AgentID><![CDATA[2]]></AgentID>
+</xml>
+msg=<xml><ToUserName><![CDATA[wxe706b25abb1216c0]]></ToUserName>
+<FromUserName><![CDATA[anranhui520]]></FromUserName>
+<CreateTime>1446285132</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<AgentID>2</AgentID>
+<Event><![CDATA[click]]></Event>
+<EventKey><![CDATA[14]]></EventKey>
+</xml>
+Event==click
+EventKey=14
+getUserInfoFromUserID.userIdanranhui520
+getUserInfoFromUserID.queryUserURLhttps://qyapi.weixin.qq.com/cgi-bin/user/get?access_token=uYyVAT9j_wmnS91EjWpmZY8Gp_-WhxGrQ8gW0cLlbvyZ88DKH7q4722XOK24EhIeOcQUT0ALGbCNmpOUE17ltg&userid=anranhui520
+Oct 31, 2015 5:52:13 PM net.sf.json.JSONObject toBean
+WARNING: Tried to assign property gender:java.lang.String to bean of class com.wx.bo.UserInfo
+Oct 31, 2015 5:52:13 PM com.wx.util.WXUtils send
+INFO: {"type":"image","media_id":"1s4umwaaGKugVEMt4-eRzMcsspE9r1BKTkOXaSQYu_uCJ_2_7Dmc8z8C_7TAWHEA6IXOS1UQZeQGC3Iez1KQq5w","created_at":1446285133}
+Upload error message:null error code:null
+Oct 31, 2015 5:52:13 PM net.sf.json.JSONObject defaultBeanProcessing
+INFO: Property 'imageMedia' of class com.wx.corpsend.message.ImageSendMessage has no read method. SKIPPED
+JsonObject:{"agentid":2,"image":{"media_id":"1s4umwaaGKugVEMt4-eRzMcsspE9r1BKTkOXaSQYu_uCJ_2_7Dmc8z8C_7TAWHEA6IXOS1UQZeQGC3Iez1KQq5w"},"msgtype":"image","toparty":"","totag":0,"touser":"anranhui520"}
+{"errcode":0,"errmsg":"ok","invalidtag":"all tag invalid"}
+Oct 31, 2015 5:52:13 PM net.sf.json.JSONObject defaultBeanProcessing
+INFO: Property 'textContent' of class com.wx.corpsend.message.TextSendMessage has no read method. SKIPPED
+JsonObject:{"agentid":2,"msgtype":"text","text":{"content":"如果要删除签课记录，同一签课表扫描两次."},"toparty":"","totag":0,"touser":"anranhui520"}
+{"errcode":0,"errmsg":"ok","invalidtag":"all tag invalid"}
