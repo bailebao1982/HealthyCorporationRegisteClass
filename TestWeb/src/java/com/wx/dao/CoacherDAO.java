@@ -13,6 +13,11 @@ import com.wx.entity.Coacher;
  */
 public interface CoacherDAO {
 
+    /**
+     * Add coacher method
+     * @param coacher
+     * @return 
+     */
     Coacher addCoacher(Coacher coacher);
 
     Coacher findCoacherByName(String name);
