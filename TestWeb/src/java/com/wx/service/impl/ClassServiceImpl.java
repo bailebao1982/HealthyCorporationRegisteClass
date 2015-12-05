@@ -18,6 +18,7 @@ import com.wx.entity.SalesRecord;
 import com.wx.entity.TrainingClass;
 import com.wx.service.ClassService;
 import java.sql.Date;
+import java.sql.Time;
 
 
 /**
@@ -221,12 +222,13 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public boolean registerClass(String coacher, String customer, Date time,String place,String signature) {
+    public boolean registerClass(String coacher, String customer, Date time,Time hourTime,String place,String signature) {
        RegisterClass regClass = new RegisterClass();
        regClass.setClassTime(time);
        regClass.setCoacher(coacher);
        regClass.setCustomer(customer);
        regClass.setPlace(place);
+       regClass.setTime(hourTime);
        regClass.setSignature(signature);
        regClass.setDeleteFlag(false);
        registerClassDAO.addRegisterClass(regClass);

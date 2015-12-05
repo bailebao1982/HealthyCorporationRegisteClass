@@ -1,6 +1,7 @@
 package com.wx.entity;
 
 import java.sql.Date;
+import java.sql.Time;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
@@ -15,6 +16,7 @@ public abstract class RegisterClass_ {
 	public static volatile SingularAttribute<RegisterClass, String> Signature;
 	public static volatile SingularAttribute<RegisterClass, String> id;
 	public static volatile SingularAttribute<RegisterClass, String> place;
+	public static volatile SingularAttribute<RegisterClass, Time> time;
 	public static volatile SingularAttribute<RegisterClass, Date> classTime;
 
 }

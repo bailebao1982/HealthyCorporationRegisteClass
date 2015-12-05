@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import java.sql.Date;
+import java.sql.Time;
 
 /**
  *
@@ -37,6 +38,9 @@ public class RegisterClass {
      
      @Column
     private Date classTime;
+     
+     @Column
+     private Time time;
      
      @Column(length=60)
      private String Signature;
@@ -99,7 +103,14 @@ public class RegisterClass {
     public void setPlace(String place) {
         this.place = place;
     }
-     
-     
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+  
      
 }

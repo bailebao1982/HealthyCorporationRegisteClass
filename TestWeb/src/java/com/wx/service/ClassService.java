@@ -7,6 +7,7 @@ package com.wx.service;
 
 import com.wx.entity.RegisterClass;
 import java.sql.Date;
+import java.sql.Time;
 
 
 
@@ -94,7 +95,7 @@ public interface ClassService {
      * @param time
      * @return 
      */
-    boolean registerClass(String coacher, String customer, Date time,String place,String signature);
+    boolean registerClass(String coacher, String customer, Date time,Time hourTime,String place,String signature);
     
     /**
      * Search Register Class

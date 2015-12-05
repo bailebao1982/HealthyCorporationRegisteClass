@@ -39,6 +39,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Date;
+import java.sql.Time;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -343,10 +344,11 @@ public class CoreService {
                         
                         StringBuffer coacherReplyResult = new StringBuffer();
                         Date dateTime = new Date(Long.parseLong(results[4].toString()));
+                        Time time = new Time(Long.parseLong(results[4].toString()));
                         UserInfo userif = getUserInfoFromUserID(fromUserName);
                         if (classInfo == null) {
                             
-                            boolean registerResult = classService.registerClass(results[2], fromUserName, dateTime, results[1], results[5]);
+                            boolean registerResult = classService.registerClass(results[2], fromUserName, dateTime,time, results[1], results[5]);
 
                             if (registerResult) {
                                 int allRegisterClass = classService.getCustomerAllRegisterClass(fromUserName);

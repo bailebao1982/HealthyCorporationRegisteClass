@@ -3,53 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/SignDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/CoacherDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/response/message/NewsMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corprcv/message/AccessTokenReturnMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/CustomerDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/Coacher.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/JsonTest.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/SalesRecord.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/SignDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/RegisterClassDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/RegisterClassDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/service/impl/CoreService.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/TrainingClass.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/Text.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/Customer.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/config/spring-common.xml</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/HttpUtil.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/Sign.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/response/message/TextMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/Image.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/TrainingClassDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/QyWxURLUtil.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/SalesRecordDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/request/message/BaseMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/TextSendMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/config/Spring-beans.xml</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/CustomerWXServlet.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/response/message/BaseMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/CoacherWXServlet.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/CustomerDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/WXUtils.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/entity/RegisterClass.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/service/ClassService.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/service/impl/CMDService.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/qq/weixin/mp/aes/WXBizMsgCrypt.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/AccessTokenGen.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/FileUtils.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/QRCodeGenerator.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/ImageSendMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/service/impl/ClassServiceImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/SalesRecordDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corprcv/message/UploadMediaReturnMessage.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/impl/CoacherDAOImpl.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/dao/TrainingClassDAO.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/corpsend/message/CorpSendBase.java</file>
-            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/TestWeb/src/java/com/wx/util/MessageUtil.java</file>
+            <file>file:/C:/Users/wewezhu/Documents/NetBeansProjects/Git/HealthyCorporationRegisteClass/TestWeb/src/java/com/wx/dao/CoacherDAO.java</file>
         </group>
     </open-files>
 </project-private>
