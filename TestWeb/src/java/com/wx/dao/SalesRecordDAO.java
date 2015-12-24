@@ -13,4 +13,6 @@ import com.wx.entity.SalesRecord;
  */
 public interface SalesRecordDAO {
     SalesRecord findSalesRecordByCustomer(String customer);
+    
+    int findGroupSalesRecordByCustomer(String customr);
 }

@@ -266,12 +266,15 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public int getSalesRecordNumByCustomer(String customer) {
+        /**
         SalesRecord salesRecord = salesRecordDAO.findSalesRecordByCustomer(customer);
         if(salesRecord!=null){
             return salesRecord.getClassNum();
         }else{
             return 0;
         }
+        * **/
+         return salesRecordDAO.findGroupSalesRecordByCustomer(customer);
     }
 
     @Override
