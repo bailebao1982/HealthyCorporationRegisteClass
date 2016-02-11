@@ -95,7 +95,7 @@ public interface ClassService {
      * @param time
      * @return 
      */
-    boolean registerClass(String coacher, String customer, Date time,Time hourTime,String place,String signature);
+    boolean registerClass(String classType,String coacher, String customer, Date time,Time hourTime,String place,String signature);
     
     /**
      * Search Register Class
@@ -115,7 +115,7 @@ public interface ClassService {
      * @param currentTime
      * @return 
      */
-    int counterRegisterClassByNameRecentWeek(String coacher, Date currentTime);
+    int counterRegisterClassByNameRecentWeek(String coacher, Date currentTime,String classType);
     
     /**
      * 统计最近一个月上课次数
@@ -123,7 +123,7 @@ public interface ClassService {
      * @param currentTime
      * @return 
      */
-    int counterRegisterClassByNameRecentMonth(String coacher,Date currentTime);
+    int counterRegisterClassByNameRecentMonth(String coacher,Date currentTime,String classType);
     
     
     /**
@@ -134,7 +134,11 @@ public interface ClassService {
      */
     int counterRegisterClassByNameRecentYear(String coacher,Date currentTime);
     
-    int getCustomerAllRegisterClass(String customer);
+    int getCustomerAllRegisterClass(String customer,String classType);
     
-    int getSalesRecordNumByCustomer(String customer);
+    int getSalesRecordNumByCustomer(String customer,String classType);
+    
+    String findCustomerGroupNameByCustomerName(String Name);
+    
+    String[] findCustomersByCustomerGroupName(String GroupName);
 }

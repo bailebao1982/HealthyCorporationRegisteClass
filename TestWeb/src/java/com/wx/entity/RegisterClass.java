@@ -47,6 +47,9 @@ public class RegisterClass {
      
      @Column
      private boolean deleteFlag;
+     
+     @Column(length=32)
+    private String ClassType;
 
     public boolean isDeleteFlag() {
         return deleteFlag;
@@ -110,6 +113,14 @@ public class RegisterClass {
 
     public void setTime(Time time) {
         this.time = time;
+    }
+
+    public String getClassType() {
+        return ClassType;
+    }
+
+    public void setClassType(String ClassType) {
+        this.ClassType = ClassType;
     }
   
      

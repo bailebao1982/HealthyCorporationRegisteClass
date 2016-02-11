@@ -22,11 +22,11 @@ public interface RegisterClassDAO {
     
     void deleteRegisterClassBySignature(String signature);
    
-    int queryRegisterClassWithCurrentWeek(String customer, Date startDate);
+    int queryRegisterClassWithCurrentWeek(String customer, Date startDate,String classType);
     
-    int queryRegisterClassWithCurrentMonth(String customer, Date startDate);
+    int queryRegisterClassWithCurrentMonth(String customer, Date startDate,String classType);
     
      int queryRegisterClassWithCurrentYear(String customer, Date startDate);
      
-     int queryAllRegisterClassByCustomer(String customer);
+     int queryAllRegisterClassByCustomer(String customer,String classType);
 }

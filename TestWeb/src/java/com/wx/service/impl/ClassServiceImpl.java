@@ -7,6 +7,7 @@ package com.wx.service.impl;
 
 import com.wx.dao.CoacherDAO;
 import com.wx.dao.CustomerDAO;
+import com.wx.dao.CustomerGroupDAO;
 import com.wx.dao.RegisterClassDAO;
 import com.wx.dao.SalesRecordDAO;
 import com.wx.dao.SignDAO;
@@ -38,7 +39,19 @@ public class ClassServiceImpl implements ClassService {
     private RegisterClassDAO registerClassDAO;
     
     private SalesRecordDAO  salesRecordDAO;
+    
+    private CustomerGroupDAO customerGroupDAO;
 
+    public CustomerGroupDAO getCustomerGroupDAO() {
+        return customerGroupDAO;
+    }
+
+    public void setCustomerGroupDAO(CustomerGroupDAO customerGroupDAO) {
+        this.customerGroupDAO = customerGroupDAO;
+    }
+
+    
+    
     public SalesRecordDAO getSalesRecordDAO() {
         return salesRecordDAO;
     }
@@ -222,8 +235,9 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public boolean registerClass(String coacher, String customer, Date time,Time hourTime,String place,String signature) {
+    public boolean registerClass(String classType,String coacher, String customer, Date time,Time hourTime,String place,String signature) {
        RegisterClass regClass = new RegisterClass();
+       regClass.setClassType(classType);
        regClass.setClassTime(time);
        regClass.setCoacher(coacher);
        regClass.setCustomer(customer);
@@ -237,16 +251,16 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public int counterRegisterClassByNameRecentWeek(String coacher, Date currentTime) {
+    public int counterRegisterClassByNameRecentWeek(String coacher, Date currentTime,String classType) {
        
-        return registerClassDAO.queryRegisterClassWithCurrentWeek(coacher, currentTime);
+        return registerClassDAO.queryRegisterClassWithCurrentWeek(coacher, currentTime,classType);
        
     }
 
     @Override
-    public int counterRegisterClassByNameRecentMonth(String coacher, Date currentTime) {
+    public int counterRegisterClassByNameRecentMonth(String coacher, Date currentTime,String classType) {
         //Date weekAgo = new Date(currentTime.getTime()-1000*60*60*24*30);
-        return registerClassDAO.queryRegisterClassWithCurrentMonth(coacher, currentTime);
+        return registerClassDAO.queryRegisterClassWithCurrentMonth(coacher, currentTime,classType);
     }
 
     @Override
@@ -265,7 +279,7 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public int getSalesRecordNumByCustomer(String customer) {
+    public int getSalesRecordNumByCustomer(String customer,String classType) {
         /**
         SalesRecord salesRecord = salesRecordDAO.findSalesRecordByCustomer(customer);
         if(salesRecord!=null){
@@ -274,12 +288,26 @@ public class ClassServiceImpl implements ClassService {
             return 0;
         }
         * **/
-         return salesRecordDAO.findGroupSalesRecordByCustomer(customer);
+         return salesRecordDAO.findGroupSalesRecordByCustomer(customer,classType);
     }
 
     @Override
-    public int getCustomerAllRegisterClass(String customer) {
-       return registerClassDAO.queryAllRegisterClassByCustomer(customer);
+    public int getCustomerAllRegisterClass(String customer,String classType) {
+       return registerClassDAO.queryAllRegisterClassByCustomer(customer,classType);
+    }
+
+    @Override
+    public String findCustomerGroupNameByCustomerName(String Name) {
+        
+        return this.customerGroupDAO.findCustomerGroupNameByCustomerName(Name);
+     
+    }
+
+    @Override
+    public String[] findCustomersByCustomerGroupName(String GroupName) {
+        
+        return this.customerGroupDAO.findCustomersByCustomerGroupName(GroupName);
+       
     }
     
 }

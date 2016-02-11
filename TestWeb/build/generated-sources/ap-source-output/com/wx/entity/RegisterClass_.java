@@ -17,6 +17,7 @@ public abstract class RegisterClass_ {
 	public static volatile SingularAttribute<RegisterClass, String> id;
 	public static volatile SingularAttribute<RegisterClass, String> place;
 	public static volatile SingularAttribute<RegisterClass, Time> time;
+	public static volatile SingularAttribute<RegisterClass, String> ClassType;
 	public static volatile SingularAttribute<RegisterClass, Date> classTime;
 
 }

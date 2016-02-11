@@ -44,21 +44,21 @@ public class RegisterClassDAOImpl implements RegisterClassDAO{
 
     
     @Override
-    public int queryRegisterClassWithCurrentWeek(String customer, Date startDate){
+    public int queryRegisterClassWithCurrentWeek(String customer, Date startDate,String classType){
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String beginDateStr = format.format(startDate);
-        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and YEARWEEK(date_format('"+beginDateStr+"','%Y-%m-%d')) = YEARWEEK(classTime) and Customer = '"+customer+"'";
+        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and YEARWEEK(date_format('"+beginDateStr+"','%Y-%m-%d')) = YEARWEEK(classTime) and Customer = '"+customer+"' and ClassType = '"+classType+"'";
         Object result = sessionFactory.getCurrentSession().createQuery(hql).uniqueResult();
         return Integer.parseInt(result.toString());
        
     }
     
     @Override
-    public int queryRegisterClassWithCurrentMonth(String customer, Date startDate){
+    public int queryRegisterClassWithCurrentMonth(String customer, Date startDate,String classType){
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String beginDateStr = format.format(startDate);
         
-        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and month(date_format('"+beginDateStr+"','%Y-%m-%d')) = month(classTime) and Customer='"+customer+"'";
+        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and month(date_format('"+beginDateStr+"','%Y-%m-%d')) = month(classTime) and Customer='"+customer+"' and ClassType = '"+classType+"'";
         Object result = sessionFactory.getCurrentSession().createQuery(hql).uniqueResult();
         return Integer.parseInt(result.toString());
     }
@@ -88,8 +88,8 @@ public class RegisterClassDAOImpl implements RegisterClassDAO{
     }
 
     @Override
-    public int queryAllRegisterClassByCustomer(String customer) {
-        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and Customer='"+customer+"' group by Customer";
+    public int queryAllRegisterClassByCustomer(String customer,String classType) {
+        String hql = "select count(*) from RegisterClass where deleteFlag <> '1' and Customer='"+customer+"' and classType = '"+classType+"' group by Customer";
         Object result = sessionFactory.getCurrentSession().createQuery(hql).uniqueResult();
         return Integer.parseInt(result.toString());
     }

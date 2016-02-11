@@ -32,12 +32,17 @@
                 <value>com.wx.entity.Sign</value>
                 <value>com.wx.entity.TrainingClass</value>
                 <value>com.wx.entity.RegisterClass</value> 
-                <value>com.wx.entity.SalesRecord</value>   
+                <value>com.wx.entity.SalesRecord</value>
+                <value>com.wx.entity.CustomerGroup</value>     
             </list>  
         </property>  
     </bean>
     
      <bean id="coacherDAO" class="com.wx.dao.impl.CoacherDAOImpl">  
+        <property name="sessionFactory" ref="sessionFactory"></property>  
+    </bean>
+    
+    <bean id="customerGroupDAO" class="com.wx.dao.impl.CustomerGroupDAOImpl">  
         <property name="sessionFactory" ref="sessionFactory"></property>  
     </bean>
     
@@ -67,7 +72,8 @@
         <property name="signDAO" ref="signDAO"></property> 
         <property name="trainingClassDAO" ref="trainingClassDAO"></property> 
         <property name="registerClassDAO" ref="registerClassDAO"></property>
-        <property name="salesRecordDAO" ref="salesRecordDAO"></property>  
+        <property name="salesRecordDAO" ref="salesRecordDAO"></property>
+        <property name="customerGroupDAO" ref="customerGroupDAO"></property>
     </bean>
     
     <bean id="classService" parent="transactionProxy">  
@@ -92,8 +98,5 @@
                 <prop key="*">PROPAGATION_REQUIRED</prop>    
             </props>    
         </property>    
-    </bean>   
-
-   
-    
+    </bean>
 </beans>

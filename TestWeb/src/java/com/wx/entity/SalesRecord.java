@@ -33,6 +33,9 @@ public class SalesRecord {
     
     @Column
     private int classNum;
+    
+    @Column(length=32)
+    private String ClassType;
 
     public String getId() {
         return id;
@@ -64,6 +67,14 @@ public class SalesRecord {
 
     public void setClassNum(int classNum) {
         this.classNum = classNum;
+    }
+
+    public String getClassType() {
+        return ClassType;
+    }
+
+    public void setClassType(String ClassType) {
+        this.ClassType = ClassType;
     }
     
     

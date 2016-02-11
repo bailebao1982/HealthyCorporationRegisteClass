@@ -42,6 +42,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -261,13 +262,15 @@ public class CoreService {
                     UserInfo userif = getUserInfoFromUserID(fromUserName);
                     StringBuffer qrcode_content = new StringBuffer();
                     if (eventKey.equals("11")) {
-                        qrcode_content.append("@英派斯");
+                        //qrcode_content.append("@英派斯");
+                        qrcode_content.append("@OM@会员提供场地");
                     } else if (eventKey.equals("12")) {
-                        qrcode_content.append("@会员提供场地");
+                        qrcode_content.append("@OO@会员提供场地");
                     } else if (eventKey.equals("13")) {
-                        qrcode_content.append("@宝力豪");
+                        //qrcode_content.append("@宝力豪");
+                        qrcode_content.append("@OM@和静工作室");
                     } else if (eventKey.equals("14")) {
-                        qrcode_content.append("@和静工作室");
+                        qrcode_content.append("@OO@和静工作室");
                     }
                     qrcode_content.append("@" + userif.getName());
 
@@ -304,13 +307,13 @@ public class CoreService {
                     //imgMsg.setTouser("anranhui520");
                     imgMsg.setAgentid((long) 2);
                     sendMessage(imgMsg);
-                    
-                     TextSendMessage txtMsg = new TextSendMessage();
-                     txtMsg.setMsgtype("text");
-                     txtMsg.setTextContent("如果要删除签课记录，同一签课表扫描两次.");
-                     txtMsg.setAgentid((long) 2);
-                     txtMsg.setTouser(fromUserName);
-                     sendMessage(txtMsg);
+
+                    TextSendMessage txtMsg = new TextSendMessage();
+                    txtMsg.setMsgtype("text");
+                    txtMsg.setTextContent("如果要删除签课记录，同一签课表扫描两次.");
+                    txtMsg.setAgentid((long) 2);
+                    txtMsg.setTouser(fromUserName);
+                    sendMessage(txtMsg);
                     // respContent = "Sunlight提示：您点击的菜单KEY是"+eventKey;
                 } else if (eventType.equalsIgnoreCase(MessageUtil.EVENT_TYPE_SCAN_CODE)) {
                     String eventKey = requestMap.get("EventKey").toString();
@@ -332,73 +335,101 @@ public class CoreService {
                         System.out.println("ScanResult:" + scanResult);
                         //process scan result
                         String[] results = scanResult.split("@");
-                        System.out.println("place:" + results[1]);
-                        System.out.println("coacher:" + results[2]);
-                        System.out.println("coacher weixin:" + results[3]);
-                        System.out.println("time:" + results[4]);
-                        System.out.println("signature:" + results[5]);
+                        //add class Type
+                        System.out.println("ClassType:" + results[1]);
 
-                        RegisterClass classInfo = classService.findRegisterClassBySignature(results[5]);
+                        System.out.println("place:" + results[2]);
+
+                        System.out.println("coacher:" + results[3]);
+                        System.out.println("coacher weixin:" + results[4]);
+                        System.out.println("time:" + results[5]);
+                        System.out.println("signature:" + results[6]);
+
+                        RegisterClass classInfo = classService.findRegisterClassBySignature(results[6]);
 
                         StringBuffer replyResult = new StringBuffer();
-                        
+
                         StringBuffer coacherReplyResult = new StringBuffer();
-                        Date dateTime = new Date(Long.parseLong(results[4].toString()));
-                        Time time = new Time(Long.parseLong(results[4].toString()));
+                        Date dateTime = new Date(Long.parseLong(results[5].toString()));
+                        Time time = new Time(Long.parseLong(results[5].toString()));
                         UserInfo userif = getUserInfoFromUserID(fromUserName);
-                        if (classInfo == null) {
+                        String classType = results[1];
+                        //TODO:如果ClassType是OM，则消息要发送给OM的对应的每个客户
+                        String registerFromUser = fromUserName;
+                        String[] messageSendUsers;
+                        List<String> messageSendUserList = new ArrayList<String>();
+
+                        if ("OO".equals(classType)) {
+                            registerFromUser = fromUserName;
+                            messageSendUsers = new String[1];
+                            messageSendUsers[0] = registerFromUser;
+                            messageSendUserList = Arrays.asList(messageSendUsers);
+                        } else if ("OM".equals(classType)) {
+                            //TODO: 增加方法从CustomerGroup里根据FromUserName拿GroupName
+                            registerFromUser = classService.findCustomerGroupNameByCustomerName(fromUserName);
+                            messageSendUsers = classService.findCustomersByCustomerGroupName(registerFromUser);
+                            for(String messageSendUser:messageSendUsers){
+                                System.out.println("messageSendUser:"+messageSendUser);
+                            }
                             
-                            boolean registerResult = classService.registerClass(results[2], fromUserName, dateTime,time, results[1], results[5]);
+                            messageSendUserList = Arrays.asList(messageSendUsers);
+
+                        }
+
+                        if (classInfo == null) {
+
+                            boolean registerResult = classService.registerClass(classType, results[3], registerFromUser, dateTime, time, results[2], results[6]);
 
                             if (registerResult) {
-                                int allRegisterClass = classService.getCustomerAllRegisterClass(fromUserName);
-                                int salesRecord = classService.getSalesRecordNumByCustomer(fromUserName);
-                                
+                                int allRegisterClass = classService.getCustomerAllRegisterClass(registerFromUser, classType);
+                                int salesRecord = classService.getSalesRecordNumByCustomer(registerFromUser, classType);
+
                                 int remainRecord = salesRecord - allRegisterClass;
-                                
+
                                 replyResult.append("恭喜又完成了一次训练！\n");
-                                int weekCount = classService.counterRegisterClassByNameRecentWeek(fromUserName, dateTime);
+                                int weekCount = classService.counterRegisterClassByNameRecentWeek(fromUserName, dateTime,classType);
                                 replyResult.append("截至这次，本周共完成训练 " + weekCount + "次。\n");
-                                int monthCount = classService.counterRegisterClassByNameRecentMonth(fromUserName, dateTime);
+                                int monthCount = classService.counterRegisterClassByNameRecentMonth(fromUserName, dateTime,classType);
                                 replyResult.append("本月共完成训练 " + monthCount + "次。\n");
                                 replyResult.append("剩余使用次数 " + remainRecord + "次。\n");
-                                
+
                                 //int yearCount = classService.counterRegisterClassByNameRecentYear(fromUserName, dateTime);
                                 //replyResult.append("今年总共完成训练 " + yearCount + "次。");
-                                coacherReplyResult.append(userif.getName()+"截至这次，本周共完成训练 " + weekCount + "次。\n");
+                                coacherReplyResult.append(userif.getName() + "截至这次，本周共完成训练 " + weekCount + "次。\n");
                                 coacherReplyResult.append("本月共完成训练 " + monthCount + "次。\n");
-                                
-                                
+
                                 coacherReplyResult.append("剩余使用次数 " + remainRecord + "次。\n");
                             }
-                        }else{
+                        } else {
+
                             System.out.println("删除签课表。");
-                            classService.deleteRegisterClassBySignature(results[5]);
-                            replyResult.append("成功删除签课记录："+"场地:"+results[1]+" 教练："+results[2]+" 时间:"+dateTime);
-                            coacherReplyResult.append("成功删除签课记录："+"场地:"+results[1]+" 教练："+results[2]+" 时间:"+dateTime);
+                            classService.deleteRegisterClassBySignature(results[6]);
+                            replyResult.append("成功删除签课记录：" + "场地:" + results[2] + " 教练：" + results[3] + " 时间:" + dateTime);
+                            coacherReplyResult.append("成功删除签课记录：" + "场地:" + results[2] + " 教练：" + results[3] + " 时间:" + dateTime);
                         }
-                        
-                        
 
-                        
+                        //Change Log: 给每个用户发送消息
+                        //针对 一对一私教，只发送一个消息
+                        //针对一对多私教，给用户group的每个人发送消息
                         System.out.println("scanResult:" + scanCodeInfo.get("ScanResult"));
-                        TextSendMessage txtMsg = new TextSendMessage();
-                        txtMsg.setMsgtype("text");
-                        txtMsg.setTextContent(replyResult.toString());
-                        txtMsg.setAgentid((long) 1);
-                        txtMsg.setTouser(fromUserName);
-
-                        sendMessage(txtMsg);
+                        System.out.println("messageSendUserList:" + messageSendUserList.toString());
+                        for (String sendUser : messageSendUserList) {
+                            TextSendMessage txtMsg = new TextSendMessage();
+                            txtMsg.setMsgtype("text");
+                            txtMsg.setTextContent(replyResult.toString());
+                            txtMsg.setAgentid((long) 1);
+                            txtMsg.setTouser(sendUser);
+                            sendMessage(txtMsg);
+                        }
                         
                         TextSendMessage txtMsg1 = new TextSendMessage();
                         txtMsg1.setMsgtype("text");
                         txtMsg1.setTextContent(coacherReplyResult.toString());
                         txtMsg1.setAgentid((long) 2);
-                        txtMsg1.setTouser(results[3]);
+                        txtMsg1.setTouser(results[4]);
 
                         sendMessage(txtMsg1);
-                        
-                        
+
                     }
                 }
             }
@@ -414,10 +445,9 @@ public class CoreService {
     }
 
     public static void main(String[] args) {
-      UUID uuid = UUID.randomUUID();
-       String uuidStr = uuid.toString();
-       
-       
-       System.out.println(uuidStr.replaceAll("-", ""));
+        UUID uuid = UUID.randomUUID();
+        String uuidStr = uuid.toString();
+
+        System.out.println(uuidStr.replaceAll("-", ""));
     }
 }

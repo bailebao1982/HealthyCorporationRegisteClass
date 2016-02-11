@@ -12,6 +12,7 @@ public abstract class SalesRecord_ {
 	public static volatile SingularAttribute<SalesRecord, String> Coacher;
 	public static volatile SingularAttribute<SalesRecord, String> id;
 	public static volatile SingularAttribute<SalesRecord, Integer> classNum;
+	public static volatile SingularAttribute<SalesRecord, String> ClassType;
 
 }
 
